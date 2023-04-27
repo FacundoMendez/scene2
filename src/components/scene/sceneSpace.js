@@ -235,11 +235,12 @@ const sceneSpace = () => {
 
             movement()
 
-         
+        const clock = new THREE.Clock()
         const animate = () =>{
-
+            const time = clock.getElapsedTime()
+            const ghost1Angle = time 
             particles.rotation.y -= 0.001
-            pointsAureola.rotation.y -= 0.005
+            pointsAureola.rotation.y -= -ghost1Angle / 10
 
             renderer.render(scene,camera)
             window.requestAnimationFrame(animate)
