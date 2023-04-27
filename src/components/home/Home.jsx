@@ -1,4 +1,4 @@
-import React, {useEffect , useState, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import Scene from '../scene/Scene'
 import "./home.css"
 import gsap from 'gsap'

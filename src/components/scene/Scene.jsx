@@ -1,4 +1,4 @@
-import React,{useEffect  , useState , useContext , useRef} from 'react'
+import React,{useEffect  , useContext } from 'react'
 import sceneSpace from './sceneSpace'
 import "./scene.css"
 import active_hover from '../home/active_hover'

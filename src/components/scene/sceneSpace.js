@@ -1,5 +1,4 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
 
 const sceneSpace = () => {
@@ -100,7 +99,6 @@ const sceneSpace = () => {
         scene.add(particles)
 
 
-
         /* aureola  */
         const parameters = {
             count: 80000,
@@ -110,7 +108,7 @@ const sceneSpace = () => {
             spin: 1,
             randomness: 1,
             randomnessPower: 1,
-            insideColor: '#ff6030',
+            insideColor: "#ff6030",
             outsideColor: '#111111',
             /* outsideColor: '#1b3984', */
           };
@@ -178,7 +176,7 @@ const sceneSpace = () => {
             });
           
             pointsAureola = new THREE.Points(geometryAureolaStars, materialAureola);
-            pointsAureola.position.set(7, 2, -15);
+            pointsAureola.position.set(1.5, 2, -15);
             pointsAureola.rotation.x = 0.4;
             scene.add(pointsAureola);
           }
@@ -196,24 +194,28 @@ const sceneSpace = () => {
             const movement = () => {
 
                 button1.addEventListener("click", () => {
+
                     gsap.to(camera.position, {
-                        z: -6 ,
-                        duration: 2  
+                        z: -45 ,
+                        duration: 12 
                     })
+
+                  
                     gsap.to(camera.rotation, {
-                        y: -1 ,
-                        duration: 2  
+                        y: 3 ,
+                        delay: 3,
+                        duration:4 
                     })
                 })
 
                 button2.addEventListener("click", () => {
                     gsap.to(camera.position, {
                         z: 12 ,
-                        duration: 2  
+                        duration: 3 
                     })
                     gsap.to(camera.rotation, {
                         y: 0 ,
-                        duration: 2  
+                        duration: 3 
                     })
 
 
@@ -222,11 +224,11 @@ const sceneSpace = () => {
                 button3.addEventListener("click", () => {
                     gsap.to(camera.position, {
                         z: -3 ,
-                        duration: 2  
+                        duration: 5  
                     })
                     gsap.to(camera.rotation, {
                         y: 0 ,
-                        duration: 2  
+                        duration: 5
                     })
                 })
               
@@ -240,7 +242,7 @@ const sceneSpace = () => {
             const time = clock.getElapsedTime()
             const ghost1Angle = time 
             particles.rotation.y -= 0.001
-            pointsAureola.rotation.y -= -ghost1Angle / 10
+            pointsAureola.rotation.y = -ghost1Angle / 10
 
             renderer.render(scene,camera)
             window.requestAnimationFrame(animate)
