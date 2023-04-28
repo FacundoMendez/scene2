@@ -9,7 +9,7 @@ const AmbientAudio = () => {
     useEffect(() => {
         if(ContextAudio.audioActive){
             audioAmbiente.current.play()
-            audioAmbiente.current.volume= 0.03
+            audioAmbiente.current.volume= 0.7
           }else{
             audioAmbiente.current.pause()
           }
